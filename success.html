@@ -1,0 +1,70 @@
+]<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eai?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(assets/imgs/pngtree-happy-valentines-day-pattern-background-picture-image_1171174.png);
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        #sim-button, #nao-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #sim-button {
+            background-color: #4caf50;
+            color: white;
+            width: 30vw;
+        }
+        #nao-button {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+            width: 30vw;
+        }
+        #play{
+            width: 100vw;
+            height: 30vh;
+            background-color: red;
+            color: yellow;
+            font-size: 8vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Quer namorar cmg?</h1>
+        <div><button id="sim-button">Sim</button></div>
+        <div><button id="nao-button">Não</button></div>
+    </div>           
+    <script>
+        const naoButton = document.getElementById('nao-button');
+        naoButton.addEventListener('mouseover', () => {
+            const maxX = window.innerWidth - naoButton.offsetWidth;
+            const maxY = window.innerHeight - naoButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            naoButton.style.left = `${randomX}px`;
+            naoButton.style.top = `${randomY}px`;
+        });
+        document.getElementById('sim-button').addEventListener('click', () => {
+            window.location.href = 'sim.html';
+        });
+    </script>
+</body>
+</html>
